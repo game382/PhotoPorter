@@ -57,6 +57,7 @@ class MainForm : Form
         Size = new Size(760, 560);
         MinimumSize = new Size(640, 480);
         Font = new Font("Segoe UI", 10);
+        try { using var ic = typeof(MainForm).Assembly.GetManifestResourceStream("PhotoPorter.ico"); if (ic != null) Icon = new Icon(ic); } catch { }
 
         var destLbl = new Label { Text = "Copy to:", Left = 12, Top = 16, AutoSize = true };
         destBox = new TextBox { Left = 85, Top = 12, Width = 520, Text = @"D:\iPhone Photos", Anchor = AnchorStyles.Left | AnchorStyles.Top | AnchorStyles.Right };
